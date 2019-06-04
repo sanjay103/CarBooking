@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    <class name="com.ds.supercar.model.transaction.BookingRecord" table="supercarbookingrecord" schema="supercar1">
+    <id name ="bookingid">
+    <generator class="increment"/>
+    </id>
+    <property name="dateofjourny"/>
+    <property name="distance"/>
+    <property name="numberofpassenger"/>
+    <property name="driver_flag"/> 
+    <property name="confirm_flag"/>
+    <many-to-one name="source" class="com.ds.supercar.model.places.Location"/> <!-- //forigenkey// -->
+    <many-to-one name="destrination" class="com.ds.supercar.model.places.Location"/>
+    <many-to-one name="user" class="com.ds.supercar.model.usermodel.User"/>
+    <many-to-one name="car" class="com.ds.supercar.model.vehicle.Car"/>
+    <many-to-one name="timesheet" class="com.ds.supercar.model.transaction.Timesheet"/>
+    
+     </class>
+    
+    </hibernate-mapping>

@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+   "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+   "http://www.hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+   <hibernate-mapping>
+    <class name="com.ds.supercar.model.payment.Insurance" table="supercarinsurance" schema="supercar1">
+    <id name="insuranceid">  <!-- //primary key// -->
+    <generator class="increment"/>  <!-- //many-to-one -->
+    
+    </id>
+    <property name="insurance_company"/>
+     <property name="amount"/>
+      <property name="renewdate"/>
+       <property name="version"/>
+        <many-to-one name="car" class="com.ds.supercar.model.vehicle.Car">
+        <column name="carid"/>
+        </many-to-one>
+        <many-to-one name="insurancetype" class="com.ds.supercar.model.payment.InsuranceType">
+        <column name="insurancetypeid"/>
+        </many-to-one>
+       </class>
+       </hibernate-mapping>

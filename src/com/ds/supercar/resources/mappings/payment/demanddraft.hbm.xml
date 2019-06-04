@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+   "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+   "http://www.hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+   <hibernate-mapping>
+    <class name="com.ds.supercar.model.payment.DemandDraft" table="supercardemanddraft" schema="supercar1">
+    <composite-id>
+    <key-property name="ddnumber"/>
+    <key-property name="bankname"/>
+    </composite-id>
+    
+    <property name="brance"/>
+     <property name="amount"/>
+      <property name="deposite_date"/>
+       <property name="expire_date"/>
+       <many-to-one name="payment" class="com.ds.supercar.model.payment.Payment">
+       <column name="paymentid"/>
+       
+ </many-to-one>
+       </class>
+       </hibernate-mapping>

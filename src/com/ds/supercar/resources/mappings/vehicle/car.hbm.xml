@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+   "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+   "http://www.hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+   <hibernate-mapping>
+    <class name="com.ds.supercar.model.vehicle.Car" table="supercarcar" schema="supercar1">
+    <id name="carid">
+    <generator class="increment"/>
+    </id>
+    <property name="carname"/> 
+    <property name="reg_number"/>
+    <property name="dateofadded"/>
+    <property name="modelyear"/>
+    <property name="availability_flag"/>
+    <many-to-one name="cartype" class="com.ds.supercar.model.vehicle.CarType">
+    <column name="cartypeid"/>
+    </many-to-one>
+    <many-to-one name="fualtype" class="com.ds.supercar.model.vehicle.FualType">
+    <column name="fualtypeid"></column>
+    </many-to-one>
+    
+    <many-to-one name="branch" class="com.ds.supercar.model.places.Branch"> 
+    <column name="branceid"/>
+    </many-to-one>
+      </class>
+       </hibernate-mapping>
